@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hover Tooltip</title>
+<style>
+  .tooltip {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  }
+  .target{
+    margin: 30px;
+  }
+</style>
+</head>
+<body>
+
+<div class="target">Hover over me</div>
+<div class="target">Hover over me</div>
+<div class="target">Hover over me</div>
+<div class="target">Hover over me</div>
+<div class="target">Hover over me</div>
+<div id="tooltip" class="tooltip"></div>
+
+<script>
+  // Get the target element and tooltip element
+  const target = document.getElementsByClassName('target');
+  const tooltip = document.getElementById('tooltip');
+  
+  // Function to show the tooltip
+  function showTooltip(event) {
+    tooltip.style.display = 'block';
+    tooltip.style.top = `${event.clientY}px`;
+    tooltip.style.left = `${event.clientX}px`;
+    tooltip.textContent = 'Your tooltip text here';
+  }
+  
+  // Function to hide the tooltip
+  function hideTooltip() {
+    tooltip.style.display = 'none';
+  }
+  
+  // Event listeners for mouseenter and mouseleave
+  // Loop through the elements and do something
+  for (let i = 0; i < target.length; i++) {
+    target[i].addEventListener('mouseenter', showTooltip);
+    target[i].addEventListener('mouseleave', hideTooltip);
+  }
+</script>
+
+</body>
+</html>
