@@ -1,0 +1,55 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>My Music Generator Main Page</title>
+
+        <link rel="stylesheet" href="{% static 'Music_Library.css' %}" type="text/css">
+    </head>
+
+    <body>
+        <div  style="order: 1;">
+            <div class="menu" id="dynamicMenu">
+                <ul>
+                    <!-- 初始選單項目 -->
+                    <li><a href="{% url 'home_page_view' %}">Home</a></li>
+                <li><a href="{% url 'music_library_view' %}">Music Library</a></li>
+                <li><a href="{% url 'music_evaluation_view' %}">Music Evaluation Room</a></li>
+                </ul>
+            </div>
+        </div>
+        <div  style="order: 2;">
+            <h1 style="text-align: left;">Choose Your Favorite Tracks</h1>
+        </div>
+        <div id="musicList" class="midi-container" style="order: 3;">
+        </div>
+        <div  style="order: 4;">
+            <h1 style="text-align: left;">Live Music</h1>
+        </div>
+        <div style="order: 5;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LEoHHvid0nE?si=3vxrZ-2y6KZwT0oC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <script>
+            // 获取音频容器
+            var audioContainer = document.getElementById("musicList");
+            
+            // 循环添加音频播放器
+            for (var i = 1; i <= 10; i++) {
+                // 创建音频元素
+                var audioElement = document.createElement("audio");
+                audioElement.src = "{% static 'Music_Library/song_' %}" + i + ".mp3";
+                audioElement.controls = true;
+                audioElement.className = "audio-container";
+        
+                // 将音频元素添加到容器中
+                audioContainer.appendChild(audioElement);
+            }
+        </script>
+        
+        <script src="{% static 'Music_Library.js' %}"></script>
+    </body>
+<</html>

@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>My Music Generator Main Page</title>
+
+        <link rel="stylesheet" href="{% static 'Music_Evaluation_Room.css' %}" type="text/css">
+        
+    </head>
+
+    <body>
+
+        <div class="menu" id="dynamicMenu">
+            <ul>
+                <!-- 初始選單項目 -->
+                <li><a href="{% url 'home_page_view' %}">Home</a></li>
+                <li><a href="{% url 'music_library_view' %}">Music Library</a></li>
+                <li><a href="{% url 'music_evaluation_view' %}">Music Evaluation Room</a></li>
+            </ul>
+        </div>
+        <script src="{% static 'Main_Page.js' %}"></script>
+    </body>
+<</html>

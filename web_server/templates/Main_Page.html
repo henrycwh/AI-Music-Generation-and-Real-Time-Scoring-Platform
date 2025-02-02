@@ -1,0 +1,83 @@
+{% load static %}
+<html>
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Music Generator Main Page</title>
+
+    <link rel="stylesheet" href="{% static 'Main_Page.css' %}" type="text/css">
+    
+  </head>
+
+  <body>
+    <div class="bg_pic_container">
+        <picture>
+            <img class="bg_pic_aligned-image bg_pic_darkened-image" src="{% static 'Images/bg_pic.jpg' %}" width="1920" height="1281" alt="Image1" fetchpriority="high" >
+        </picture>
+        <div class="menu" id="dynamicMenu">
+            <ul>
+                <!-- 初始選單項目 -->
+                <li><a href="{% url 'home_page_view' %}">Home</a></li>
+                <li><a href="{% url 'music_library_view' %}">Music Library</a></li>
+                <li><a href="{% url 'music_evaluation_view' %}">Music Evaluation Room</a></li>
+            </ul>
+        </div>
+        <div class="overlay-text">Your Overlay Text</div>
+    </div>
+
+    <div class=" bg_pic_container">
+
+        <div>
+            <div class="title">
+                這裡放標題這裡放標題
+            </div>
+            <div class="content">
+                這裡放內文這裡放內文這裡放內文這裡放內文這裡放內文這裡放內文這裡放內文
+            </div>
+        </div>
+
+        <div class="item-image-container">
+            <img src="{% static 'Images/item_pic.jpg' %}" alt="Image 1">
+            <img src="{% static 'Images/item_pic2.jpg' %}" alt="Image 2">
+            <img src="{% static 'Images/item_pic3.jpg' %}" alt="Image 3">
+        </div>
+
+    </div>
+
+    <div class="bg_pic_container">
+        <picture><img class="bg_pic_aligned-image bg_pic_darkened-image" src="{% static 'Images/bg_pic2.jpg' %}" width="1920" height="1281" alt="" fetchpriority="high" ></picture>
+        <div class="overlay-text">Your Overlay Text2</div>
+    </div>
+
+    <div class=" bg_pic_container">
+
+        <div>
+            <div class="title">
+                這裡放標題這裡放標題
+            </div>
+            <div class="content">
+                這裡放內文這裡放內文這裡放內文這裡放內文這裡放內文這裡放內文這裡放內文
+            </div>
+        </div>
+
+    <div class="item-image-container">
+        <img src="{% static 'Images/item_pic.jpg' %}" alt="Image 1">
+        <img src="{% static 'Images/item_pic2.jpg' %}" alt="Image 2">
+        <img src="{% static 'Images/item_pic3.jpg' %}" alt="Image 3">
+    </div>
+        
+    </div>
+
+    <div class="bg_pic_container">
+        <picture><img class="bg_pic_aligned-image  bg_pic_darkened-image" src="{% static 'Images/bg_pic3.jpg' %}" width="1920" height="1281" alt="" fetchpriority="high" ></picture>
+        <div class="overlay-text">Your Overlay Text3</div>
+        </div>
+
+    <script src="{% static 'Main_Page.js' %}"></script>
+  </body>
+
+</html>
