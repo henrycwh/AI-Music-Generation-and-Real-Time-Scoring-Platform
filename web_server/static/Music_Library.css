@@ -1,0 +1,89 @@
+  body {
+    margin: 60px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+/*選單內容*/
+.menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50%;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    display: inline-block; /* 橫向排列 */
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative; /* 使得偽元素相對於該列表項目定位 */
+  }
+
+  .menu li::before,
+  .menu li::after {
+    content: ""; /* 初始為空 */
+    color: #000000; /* 豎線的顏色 */
+    margin: 0 5px; /* 豎線格開的左右間距，可以根據需要更改 */
+    position: absolute;
+    top: 50%; /* 豎線相對於父元素上下居中 */
+    transform: translateY(-50%);
+    height: 100%; /* 讓豎線的高度與字相等 */
+    transition: all 0.3s; /* 增加平滑過渡效果 */
+  }
+
+  .menu li::before {
+    left: -15px; /* 左邊的豎線格開位置 */
+  }
+
+  .menu li::after {
+    right: -15px; /* 右邊的豎線格開位置 */
+  }
+
+  .menu li:hover::before,
+  .menu li:hover::after {
+    content: "|"; /* 滑鼠指到字上時，豎線格開的內容，可以根據需要更改 */
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: #000000; /* 豎線的顏色 */
+    font-weight:lighter;
+    font-size: 120%;
+  }
+
+  .midi-container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column; /* 设置为垂直方向排列 */
+    align-items: baseline; /* 水平居中对齐内容 */
+  }
+
+  .audio-container{
+    margin: 20px;
+  }
+
+  #tooltip {
+    display: none;
+    position: absolute;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    z-index: 999; /* 將文本框顯示在最上層 */
+  }
+
+  /* 当鼠标悬停在#hoverElement上时显示#tooltip */
+  #hoverElement:hover + #tooltip {
+    display: block;
+  }
